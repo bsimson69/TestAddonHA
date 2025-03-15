@@ -2,21 +2,4 @@
   "name": "Home Assistant Add-on: Local_sshpass-addon",
   "url": "https://github.com/bsimson69/TestAddonHA",
   "maintainer": "Max Muster"
-  "addons": {
-    "local_sshpass-addon": {
-      "name": "SSHpass Add-on",
-      "slug": "local_sshpass-addon",
-      "version": "0.1",
-      "description": "Ein Add-on, das sshpass und openssh-client installiert.",
-      "startup": "services",
-      "boot": "auto",
-      "arch": ["amd64", "armv7", "armhf", "aarch64", "i386"],
-      "options": {},
-      "schema": {},
-      "build": {
-        "dockerfile": "Dockerfile",
-        "args": {}
-      }
-    }
-  }
 }
