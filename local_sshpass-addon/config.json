@@ -1,0 +1,15 @@
+{
+  "name": "SSHpass Add-on",
+  "version": "0.1",
+  "slug": "local_sshpass-addon",
+  "description": "Ein Add-on, das sshpass und openssh-client installiert.",
+  "startup": "services",
+  "boot": "auto",
+  "arch": ["amd64", "armv7", "armhf", "aarch64", "i386"],
+  "options": {},
+  "schema": {},
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": {}
+  }
+}
