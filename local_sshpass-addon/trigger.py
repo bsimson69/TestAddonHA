@@ -31,7 +31,7 @@ def on_message(client, userdata, msg):
     except subprocess.CalledProcessError as e:
         print("Fehler beim Ausführen des Befehls:", e, e.stderr)
 
-client = mqtt.Client()
+client = mqtt.Client(callback_api_version=2)
 client.on_connect = on_connect
 client.on_message = on_message
 
