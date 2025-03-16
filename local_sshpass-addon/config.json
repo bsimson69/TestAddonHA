@@ -1,6 +1,6 @@
 {
   "name": "SSHpass Add-on",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "slug": "local_sshpass-addon",
   "description": "Ein Add-on, das sshpass und openssh-client installiert.",
   "startup": "services",
@@ -24,22 +24,15 @@
     "STOCK_NAME": "Tesla Motors Aktie"
   },
   "schema": {
-    "type": "object",
-    "properties": {
-      "SSH_PASS": "password",
-      "TARGET_IP": "str",
-      "MQTT_BROKER": "str",
-      "MQTT_PORT": "port",
-      "MQTT_TOPIC": "str",
-      "PYTHON_PATH": "str",
-      "PYTHON_SCRIPT": "str",
-      "STOCK_URL": "url",
-      "STOCK_NAME": "str"
-    },
-    "required": [
-      "SSH_PASS",
-      "TARGET_IP"
-    ]
+    "SSH_PASS": "password",
+    "TARGET_IP": "str",
+    "MQTT_BROKER": "str",
+    "MQTT_PORT": "port",
+    "MQTT_TOPIC": "str",
+    "PYTHON_PATH": "str",
+    "PYTHON_SCRIPT": "str",
+    "STOCK_URL": "url",
+    "STOCK_NAME": "str"
   },
   "build": {
     "dockerfile": "Dockerfile",
