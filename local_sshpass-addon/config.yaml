@@ -21,29 +21,29 @@ options:
   STOCK_URL: "https://www.beispielseite.de/aktie/tesla-motors-aktie"
   STOCK_NAME: "Tesla Motors Aktie"
 schema:
-  type: "object"
+  type: object
   properties:
     SSH_PASS:
-      type: "string"
+      type: string
     TARGET_IP:
-      type: "string"
+      type: string
     MQTT_BROKER:
-      type: "string"
+      type: string
     MQTT_PORT:
-      type: "number"
+      type: number
     MQTT_TOPIC:
-      type: "string"
+      type: string
     PYTHON_PATH:
-      type: "string"
+      type: string
     PYTHON_SCRIPT:
-      type: "string"
+      type: string
     STOCK_URL:
-      type: "string"
+      type: string
     STOCK_NAME:
-      type: "string"
+      type: string
   required:
-    - "SSH_PASS"
-    - "TARGET_IP"
+    - SSH_PASS
+    - TARGET_IP
 build:
   dockerfile: "Dockerfile"
   args: {}
