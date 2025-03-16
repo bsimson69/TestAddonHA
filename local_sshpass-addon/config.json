@@ -1,0 +1,48 @@
+{
+  "name": "SSHpass Add-on",
+  "version": "1.5.2",
+  "slug": "local_sshpass-addon",
+  "description": "Ein Add-on, das sshpass und openssh-client installiert.",
+  "startup": "services",
+  "boot": "auto",
+  "arch": [
+    "amd64",
+    "armv7",
+    "armhf",
+    "aarch64",
+    "i386"
+  ],
+  "options": {
+    "SSH_PASS": "dein_root_passwort",
+    "TARGET_IP": "192.168.X.Y",
+    "MQTT_BROKER": "core-mosquitto",
+    "MQTT_PORT": 1883,
+    "MQTT_TOPIC": "local_sshpass-addon/trigger",
+    "PYTHON_PATH": "/root/ls_tc_scraper/venv/bin/python",
+    "PYTHON_SCRIPT": "/root/ls_tc_scraper/ls_tc_scraper.py",
+    "STOCK_URL": "https://www.beispielseite.de/aktie/tesla-motors-aktie",
+    "STOCK_NAME": "Tesla Motors Aktie"
+  },
+  "schema": {
+    "type": "object",
+    "properties": {
+      "SSH_PASS": "password",
+      "TARGET_IP": "str",
+      "MQTT_BROKER": "str",
+      "MQTT_PORT": "port",
+      "MQTT_TOPIC": "str",
+      "PYTHON_PATH": "str",
+      "PYTHON_SCRIPT": "str",
+      "STOCK_URL": "url",
+      "STOCK_NAME": "str"
+    },
+    "required": [
+      "SSH_PASS",
+      "TARGET_IP"
+    ]
+  },
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": {}
+  }
+}
