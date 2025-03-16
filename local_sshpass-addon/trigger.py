@@ -2,6 +2,7 @@
 import os
 import subprocess
 import paho.mqtt.client as mqtt
+from paho.mqtt.client import CallbackAPIVersion
 
 MQTT_BROKER = os.environ.get("MQTT_BROKER", "core-mosquitto")
 MQTT_PORT = int(os.environ.get("MQTT_PORT", "1883"))
@@ -31,7 +32,7 @@ def on_message(client, userdata, msg):
     except subprocess.CalledProcessError as e:
         print("Fehler beim Ausführen des Befehls:", e, e.stderr)
 
-client = mqtt.Client(callback_api_version=2)
+client = mqtt.Client(callback_api_version=CallbackAPIVersion.V2)
 client.on_connect = on_connect
 client.on_message = on_message
 
