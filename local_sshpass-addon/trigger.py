@@ -3,20 +3,17 @@ import os
 import subprocess
 import paho.mqtt.client as mqtt
 
-# --- Konfiguration via Umgebungsvariablen oder Default-Werten ---
 MQTT_BROKER = os.environ.get("MQTT_BROKER", "core-mosquitto")
 MQTT_PORT = int(os.environ.get("MQTT_PORT", "1883"))
 MQTT_TOPIC = os.environ.get("MQTT_TOPIC", "local_sshpass-addon/trigger")
 
-# Zielsystem- und Skript-Konfiguration
-SSH_PASS = os.environ.get("SSH_PASS", "DEIN_ROOT_PASSWORT")
-TARGET_IP = os.environ.get("TARGET_IP", "192.168.X.Y")
+SSH_PASS = os.environ.get("SSH_PASS")  # Wird über den Supervisor konfiguriert
+TARGET_IP = os.environ.get("TARGET_IP")  # Ebenso
 PYTHON_PATH = os.environ.get("PYTHON_PATH", "/root/ls_tc_scraper/venv/bin/python")
 PYTHON_SCRIPT = os.environ.get("PYTHON_SCRIPT", "/root/ls_tc_scraper/ls_tc_scraper.py")
 STOCK_URL = os.environ.get("STOCK_URL", "https://www.beispielseite.de/aktie/tesla-motors-aktie")
 STOCK_NAME = os.environ.get("STOCK_NAME", "Tesla Motors Aktie")
 
-# Baue den SSH-Befehl mit absolutem Pfad für sshpass:
 ssh_command = (
     f"/usr/bin/sshpass -p '{SSH_PASS}' ssh -o StrictHostKeyChecking=no root@{TARGET_IP} "
     f"'{PYTHON_PATH} {PYTHON_SCRIPT} \"{STOCK_URL}\" \"{STOCK_NAME}\"'"
