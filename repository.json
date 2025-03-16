@@ -2,6 +2,8 @@
   "addons": {
     "local_sshpass-addon": {
       "name": "SSHpass Add-on",
+      "url": "https://github.com/bsimson69/TestAddonHA",
+      "maintainer": "Max Muster"
       "slug": "local_sshpass-addon",
       "version": "0.1",
       "description": "Ein Add-on, das sshpass und openssh-client installiert.",
@@ -40,6 +42,5 @@
       }
     }
   },
-  "url": "https://github.com/bsimson69/TestAddonHA",
-  "maintainer": "Max Muster"
+  
 }
